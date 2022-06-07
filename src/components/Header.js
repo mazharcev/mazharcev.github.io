@@ -1,13 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../App.css";
 import { ROUTES } from "../services/services";
-// import MediaLink from "./MediaLink";
-
-// import gitLogo from "../images/github-icon.png";
-// import linkedinLogo from "../images/linkedin-icon.png";
-
-// const gitUrl = "https://github.com/aleksns";
-// const linkedinUrl = "https://www.linkedin.com/in/aleksns/";
 
 export default function Header() {
   return (
