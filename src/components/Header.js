@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <NavLink to={ROUTES.HOME} id="home-div" className="home-div">
-        Алексей Мажарцев
+        Alexey Mazharcev
       </NavLink>
 
       <ul className="nav-header-links">

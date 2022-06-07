@@ -17,20 +17,24 @@ export const carouselImages = [
     id: "hero1",
     original: heroImg1,
     placeholder: heroImg1Placeholder,
+    position: "50% 50%"
   },
   {
     id: "hero2",
     original: heroImg2,
     placeholder: heroImg2Placeholder,
+    position: "50% 50%"
   },
   {
     id: "hero3",
     original: heroImg3,
     placeholder: heroImg3Placeholder,
+    position: "50% 30%"
   },
   {
     id: "hero4",
     original: heroImg4,
     placeholder: heroImg4Placeholder,
+    position: "50% 30%"
   },
 ];

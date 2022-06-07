@@ -32,6 +32,7 @@ export default function ImageComponent(props) {
       alt="hero image"
       className="hero-image"
       style={{
+        objectPosition: item.position,
         display: index === currentIndex ? "" : "none",
       }}
       onTouchStart={startTouch}
