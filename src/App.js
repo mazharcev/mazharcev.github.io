@@ -9,6 +9,8 @@ export default function App() {
       const homeBtn = document.getElementById("home-div");
       const hamburger = document.querySelector(".header-hamburger");
       const nav = document.querySelector(".nav-header-links");
+      const categoriesNav = document.querySelector(".nav-categories");
+      const categoriesContent = document.querySelector(".nav-categories-content");
 
       hamburger.addEventListener(
         "click",
@@ -19,14 +21,14 @@ export default function App() {
         false
       );
 
-      nav.addEventListener(
-        "click",
-        () => {
-          nav.classList.remove("nav-header-links-active");
-          hamburger.classList.remove("ham-toggle");
-        },
-        false
-      );
+      // nav.addEventListener(
+      //   "click",
+      //   () => {
+      //     nav.classList.remove("nav-header-links-active");
+      //     hamburger.classList.remove("ham-toggle");
+      //   },
+      //   false
+      // );
 
       homeBtn.addEventListener(
         "click",
@@ -36,6 +38,15 @@ export default function App() {
         },
         false
       );
+
+      categoriesNav.addEventListener(
+        "click",
+        () => {
+          categoriesContent.classList.toggle("nav-categories-content-active");
+        }
+
+      )
+
     }
 
     // function handleButtonScrollToTop() {

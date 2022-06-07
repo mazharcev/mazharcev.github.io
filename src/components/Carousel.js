@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import { carouselImages } from "../services/services";
 import SwipeComponent from "./SwipeComponent";
@@ -8,7 +8,7 @@ export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const maxIndex = carouselImages.length - 1;
   //const [isMouseOver, setIsMouseOver] = useState(false);
-
+  //const isMouseOver = useRef(false);
   const { startTouch, endTouch, moveTouch } = SwipeComponent(
     currentIndex,
     handleIndexChange
@@ -26,18 +26,35 @@ export default function Carousel() {
   function CarouselContent(props) {
     const { item, index } = props;
     return (
-        <div className="carousel-item">
-      <ImageComponent
-         item={item}
-        index={index}
-        currentIndex={currentIndex}
-        startTouch={startTouch}
-        endTouch={endTouch}
-        // onTouchMove={moveTouch}
-      />
+      <div className="carousel-item">
+        <ImageComponent
+          item={item}
+          index={index}
+          currentIndex={currentIndex}
+          startTouch={startTouch}
+          endTouch={endTouch}
+          // onTouchMove={moveTouch}
+        />
       </div>
     );
   }
+
+  useEffect(() => {
+    if (matchMedia("(pointer:fine)").matches) {
+      const timer = setInterval(() => {
+        handleIndexChange(currentIndex + 1);
+        if (currentIndex >= maxIndex) {
+          handleIndexChange(0);
+        }
+      }, 6000);
+
+      return () => clearInterval(timer);
+    }
+  });
+
+  // function handleMouseOver(value) {
+  //   isMouseOver.current = value;
+  // }
 
   return (
     <>
@@ -54,7 +71,11 @@ export default function Carousel() {
           <CarouselContent key={item.id} item={item} index={index} />
         ))}
 
-        <div className="carousel-control">
+        <div
+          className="carousel-control"
+          // onMouseEnter={() => handleMouseOver(true)}
+          // onMouseLeave={() => handleMouseOver(false)}
+        >
           <button
             onClick={() => handleIndexChange(currentIndex - 1)}
             className="carousel-btn carousel-btn-prev"

@@ -12,7 +12,19 @@ export default function Header() {
       <ul className="nav-header-links">
         <NavLink to={ROUTES.HOME}>Портфолио</NavLink>
         <NavLink to={ROUTES.HOME}>Контакты</NavLink>
-        <NavLink to={ROUTES.HOME}>Категории</NavLink>
+        <div className="nav-categories">
+          Категории ⯆
+          <div className="nav-categories-content-wrapper">
+          <ul className="nav-categories-content">
+          <NavLink to={ROUTES.HOME}>Street</NavLink>
+          <NavLink to={ROUTES.HOME}>Studio</NavLink>
+          <NavLink to={ROUTES.HOME}>Portrait</NavLink>
+          </ul>
+        </div>
+        </div>
+        <NavLink to={ROUTES.HOME}>Phone</NavLink>
+        <NavLink to={ROUTES.HOME}>Email</NavLink>
+        <NavLink to={ROUTES.HOME}>Discord</NavLink>
       </ul>
 
       <div className="header-hamburger">
