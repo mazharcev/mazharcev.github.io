@@ -4,27 +4,27 @@ import { ROUTES } from "../services/services";
 
 export default function Header() {
   return (
-    <div className="header">
-      <NavLink to={ROUTES.HOME} id="home-div" className="home-div">
+    <div id="headerId" className="header">
+      <NavLink to={ROUTES.HOME} id="homeDiv" className="home-div">
         Alexey Mazharcev
       </NavLink>
 
       <ul className="nav-header-links">
-        <NavLink to={ROUTES.HOME}>Портфолио</NavLink>
-        <NavLink to={ROUTES.HOME}>Контакты</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">Портфолио</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">Контакты</NavLink>
         <div className="nav-categories">
-          Категории ⯆
+          Категории <span>▼</span>
           <div className="nav-categories-content-wrapper">
           <ul className="nav-categories-content">
-          <NavLink to={ROUTES.HOME}>Street</NavLink>
-          <NavLink to={ROUTES.HOME}>Studio</NavLink>
-          <NavLink to={ROUTES.HOME}>Portrait</NavLink>
+          <NavLink to={ROUTES.STREET} className="nav-link">Street</NavLink>
+          <NavLink to={ROUTES.STUDIO} className="nav-link">Studio</NavLink>
+          <NavLink to={ROUTES.PORTRAIT} className="nav-link">Portrait</NavLink>
           </ul>
         </div>
         </div>
-        <NavLink to={ROUTES.HOME}>Phone</NavLink>
-        <NavLink to={ROUTES.HOME}>Email</NavLink>
-        <NavLink to={ROUTES.HOME}>Discord</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">Phone</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">Email</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">Discord</NavLink>
       </ul>
 
       <div className="header-hamburger">

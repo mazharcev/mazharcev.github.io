@@ -6,9 +6,11 @@ import RoutesComponent from "./routes/RoutesComponent";
 export default function App() {
   useEffect(() => {
     function hamMenuSlide() {
-      const homeBtn = document.getElementById("home-div");
+      const header = document.getElementById("headerId");
+      const homeBtn = document.getElementById("homeDiv");
       const hamburger = document.querySelector(".header-hamburger");
       const nav = document.querySelector(".nav-header-links");
+      const navLinks = document.querySelectorAll(".nav-link")
       const categoriesNav = document.querySelector(".nav-categories");
       const categoriesContent = document.querySelector(".nav-categories-content");
 
@@ -16,16 +18,37 @@ export default function App() {
         "click",
         () => {
           nav.classList.toggle("nav-header-links-active");
+          nav.classList.toggle("header-dark");
           hamburger.classList.toggle("ham-toggle");
+          header.classList.toggle("header-dark");
         },
         false
       );
 
-      // nav.addEventListener(
+      for (let i = 0; i < navLinks.length; ++i) {
+        navLinks[i].addEventListener(
+          "click",
+          () => {
+            nav.classList.remove("nav-header-links-active");
+            nav.classList.remove("header-dark");
+            hamburger.classList.remove("ham-toggle");
+            header.classList.remove("header-dark");
+          },
+          false
+        );
+     }
+
+      // navLinks.addEventListener(
       //   "click",
       //   () => {
+      //     for (let i = 0; i < navLinks.length; ++i) {
+      //       list[i].classList.add('cf');
+      //    }
+      //     console.log('clicked')
       //     nav.classList.remove("nav-header-links-active");
+      //     nav.classList.remove("header-dark");
       //     hamburger.classList.remove("ham-toggle");
+      //     header.classList.remove("header-dark");
       //   },
       //   false
       // );
@@ -34,18 +57,19 @@ export default function App() {
         "click",
         () => {
           nav.classList.remove("nav-header-links-active");
+          nav.classList.remove("header-dark");
           hamburger.classList.remove("ham-toggle");
+          header.classList.remove("header-dark");
         },
         false
       );
 
-      categoriesNav.addEventListener(
-        "click",
-        () => {
-          categoriesContent.classList.toggle("nav-categories-content-active");
-        }
-
-      )
+      // categoriesNav.addEventListener(
+      //   "click",
+      //   () => {
+      //     categoriesContent.classList.toggle("nav-categories-content-active");
+      //   }
+      // )
 
     }
 

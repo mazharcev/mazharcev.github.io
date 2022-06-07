@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { carouselImages } from "../services/services";
 import SwipeComponent from "./SwipeComponent";
-import ImageComponent from "./ImageComponent";
+import HeroImage from "./HeroImage";
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,11 +24,11 @@ export default function Carousel() {
   }
 
   function CarouselContent(props) {
-    const { item, index } = props;
+    const { image, index } = props;
     return (
       <div className="carousel-item">
-        <ImageComponent
-          item={item}
+        <HeroImage
+          image={image}
           index={index}
           currentIndex={currentIndex}
           startTouch={startTouch}
@@ -39,18 +39,18 @@ export default function Carousel() {
     );
   }
 
-  useEffect(() => {
-    if (matchMedia("(pointer:fine)").matches) {
-      const timer = setInterval(() => {
-        handleIndexChange(currentIndex + 1);
-        if (currentIndex >= maxIndex) {
-          handleIndexChange(0);
-        }
-      }, 6000);
+  // useEffect(() => {
+  //   // if (matchMedia("(pointer:fine)").matches) {
+  //   const timer = setInterval(() => {
+  //     handleIndexChange(currentIndex + 1);
+  //     if (currentIndex >= maxIndex) {
+  //       handleIndexChange(0);
+  //     }
+  //   }, 10000);
 
-      return () => clearInterval(timer);
-    }
-  });
+  //   return () => clearInterval(timer);
+  //   // }
+  // });
 
   // function handleMouseOver(value) {
   //   isMouseOver.current = value;
@@ -67,8 +67,8 @@ export default function Carousel() {
         // onTouchEnd={endTouch}
         // onTouchMove={moveTouch}
       >
-        {carouselImages.map((item, index) => (
-          <CarouselContent key={item.id} item={item} index={index} />
+        {carouselImages.map((image, index) => (
+          <CarouselContent key={image.id} image={image} index={index} />
         ))}
 
         <div

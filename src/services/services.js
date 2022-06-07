@@ -10,6 +10,9 @@ import heroImg4Placeholder from "../images/hero/placeholders/heroImage4-placehol
 
 export const ROUTES = {
   HOME: "/",
+  STREET: "/street",
+  STUDIO: "/studio",
+  PORTRAIT: "/portrait"
 };
 
 export const carouselImages = [
@@ -36,5 +39,89 @@ export const carouselImages = [
     original: heroImg4,
     placeholder: heroImg4Placeholder,
     position: "50% 30%"
+  },
+];
+
+export const streetImages = [
+  {
+    id: "street1",
+    original: "/images/street/street1.jpg",
+    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
+  },
+  {
+    id: "street2",
+    original: "/images/street/street1.jpg",
+    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
+  },
+  {
+    id: "street3",
+    original: "/images/street/street1.jpg",
+    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
+  },
+  {
+    id: "street4",
+    original: "/images/street/street1.jpg",
+    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
+  },
+  {
+    id: "street5",
+    original: "/images/street/street1.jpg",
+    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
+  },
+];
+
+export const studioImages = [
+  {
+    id: "studio1",
+    original: "/images/studio/studio1.jpg",
+    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
+  },
+  {
+    id: "studio2",
+    original: "/images/studio/studio1.jpg",
+    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
+  },
+  {
+    id: "studio3",
+    original: "/images/studio/studio1.jpg",
+    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
+  },
+  {
+    id: "studio4",
+    original: "/images/studio/studio1.jpg",
+    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
+  },
+  {
+    id: "studio5",
+    original: "/images/studio/studio1.jpg",
+    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
+  },
+];
+
+export const portraitImages = [
+  {
+    id: "portrait1",
+    original: "/images/portrait/portrait1.jpg",
+    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
+  },
+  {
+    id: "portrait2",
+    original: "/images/portrait/portrait1.jpg",
+    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
+  },
+  {
+    id: "portrait3",
+    original: "/images/portrait/portrait1.jpg",
+    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
+  },
+  {
+    id: "portrait4",
+    original: "/images/portrait/portrait1.jpg",
+    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
+  },
+  {
+    id: "portrait5",
+    original: "/images/portrait/portrait1.jpg",
+    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
   },
 ];

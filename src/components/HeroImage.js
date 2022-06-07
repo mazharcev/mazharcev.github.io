@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 
-export default function ImageComponent(props) {
-  const { item, index, currentIndex, startTouch, endTouch } = props;
-  const [currentImg, setCurrentImg] = useState(item.placeholder);
+export default function HeroImage(props) {
+  const { image, index, currentIndex, startTouch, endTouch } = props;
+  const [currentImg, setCurrentImg] = useState(image.placeholder);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const imgToLoad = new Image();
-    imgToLoad.src = item.original;
+    imgToLoad.src = image.original;
 
     const loadImage = new Promise((resolve) => resolve(imgToLoad.onload));
 
     async function setImage() {
       try {
         await loadImage;
-        setCurrentImg(item.original);
+        setCurrentImg(image.original);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -22,17 +22,17 @@ export default function ImageComponent(props) {
     }
 
     setImage();
-  }, [item.original]);
+  }, [image.original]);
 
   return (
     <img
       loading="lazy"
-      id={item.id}
+      id={image.id}
       src={currentImg}
       alt="hero image"
       className="hero-image"
       style={{
-        objectPosition: item.position,
+        objectPosition: image.position,
         display: index === currentIndex ? "" : "none",
       }}
       onTouchStart={startTouch}
