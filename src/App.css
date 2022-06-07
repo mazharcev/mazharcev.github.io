@@ -155,7 +155,7 @@ body, html {
   margin: 0 50px;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 768px) {
   .hero-image {
     background-position: top;
   }
@@ -170,12 +170,9 @@ body, html {
     flex-direction: column;
     justify-content: center;
     background-color: var(--header-color);
-    /* transform: translateY(-200%); */
-
     display: none;
     opacity: 0;
     transition: visibility 0s, opacity 0.4s linear;
-
     /* transition: all 0.1 ease-in; */
     z-index: 1;
     padding: 0.6em;
