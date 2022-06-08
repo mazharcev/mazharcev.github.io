@@ -10,21 +10,33 @@ export default function Header() {
       </NavLink>
 
       <ul className="nav-header-links">
-        <NavLink to={ROUTES.HOME} className="nav-link">Портфолио</NavLink>
-        <NavLink to={ROUTES.HOME} className="nav-link">Контакты</NavLink>
+        <NavLink to={ROUTES.HOME} className="nav-link">
+          Портфолио
+        </NavLink>
         <div className="nav-categories">
-          Категории <span>▼</span>
-          <div className="nav-categories-content-wrapper">
-          <ul className="nav-categories-content">
-          <NavLink to={ROUTES.STREET} className="nav-link">Street</NavLink>
-          <NavLink to={ROUTES.STUDIO} className="nav-link">Studio</NavLink>
-          <NavLink to={ROUTES.PORTRAIT} className="nav-link">Portrait</NavLink>
-          </ul>
+          <p id="navCategoriesId">
+            Категории <span>▼</span>
+          </p>
+          <div
+            id="navCategoriesContentId"
+            className="nav-categories-content-wrapper"
+          >
+            <ul className="nav-categories-content">
+              <NavLink to={ROUTES.STREET} className="nav-link">
+                Street
+              </NavLink>
+              <NavLink to={ROUTES.STUDIO} className="nav-link">
+                Studio
+              </NavLink>
+              <NavLink to={ROUTES.PORTRAIT} className="nav-link">
+                Portrait
+              </NavLink>
+            </ul>
+          </div>
         </div>
-        </div>
-        <NavLink to={ROUTES.HOME} className="nav-link">Phone</NavLink>
-        <NavLink to={ROUTES.HOME} className="nav-link">Email</NavLink>
-        <NavLink to={ROUTES.HOME} className="nav-link">Discord</NavLink>
+        <NavLink to={ROUTES.CONTACT} className="nav-link">
+          Контакты
+        </NavLink>
       </ul>
 
       <div className="header-hamburger">

@@ -5,14 +5,27 @@ import RoutesComponent from "./routes/RoutesComponent";
 
 export default function App() {
   useEffect(() => {
-    function hamMenuSlide() {
+    function navEvents() {
       const header = document.getElementById("headerId");
       const homeBtn = document.getElementById("homeDiv");
       const hamburger = document.querySelector(".header-hamburger");
       const nav = document.querySelector(".nav-header-links");
-      const navLinks = document.querySelectorAll(".nav-link")
-      const categoriesNav = document.querySelector(".nav-categories");
-      const categoriesContent = document.querySelector(".nav-categories-content");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const categoriesNav = document.getElementById("navCategoriesId");
+      const categoriesContent = document.getElementById(
+        "navCategoriesContentId"
+      );
+
+      if(!matchMedia("(pointer:fine)").matches || "ontouchstart" in window) {
+        categoriesNav.addEventListener(
+          "click",
+          () => {
+            categoriesContent.classList.toggle("nav-categories-content-active");
+            categoriesNav.classList.toggle("nav-categories-opened");
+          },
+          false
+        );
+      }
 
       hamburger.addEventListener(
         "click",
@@ -33,25 +46,12 @@ export default function App() {
             nav.classList.remove("header-dark");
             hamburger.classList.remove("ham-toggle");
             header.classList.remove("header-dark");
+            categoriesContent.classList.remove("nav-categories-content-active");
+            categoriesNav.classList.remove("nav-categories-opened");
           },
           false
         );
-     }
-
-      // navLinks.addEventListener(
-      //   "click",
-      //   () => {
-      //     for (let i = 0; i < navLinks.length; ++i) {
-      //       list[i].classList.add('cf');
-      //    }
-      //     console.log('clicked')
-      //     nav.classList.remove("nav-header-links-active");
-      //     nav.classList.remove("header-dark");
-      //     hamburger.classList.remove("ham-toggle");
-      //     header.classList.remove("header-dark");
-      //   },
-      //   false
-      // );
+      }
 
       homeBtn.addEventListener(
         "click",
@@ -60,17 +60,11 @@ export default function App() {
           nav.classList.remove("header-dark");
           hamburger.classList.remove("ham-toggle");
           header.classList.remove("header-dark");
+          categoriesContent.classList.remove("nav-categories-content-active");
+          categoriesNav.classList.remove("nav-categories-opened");
         },
         false
       );
-
-      // categoriesNav.addEventListener(
-      //   "click",
-      //   () => {
-      //     categoriesContent.classList.toggle("nav-categories-content-active");
-      //   }
-      // )
-
     }
 
     // function handleButtonScrollToTop() {
@@ -84,7 +78,7 @@ export default function App() {
     // }
 
     //window.addEventListener("scroll", handleButtonScrollToTop);
-    hamMenuSlide();
+    navEvents();
   }, []);
 
   return (

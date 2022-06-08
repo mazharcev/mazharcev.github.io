@@ -10,6 +10,7 @@ import heroImg4Placeholder from "../images/hero/placeholders/heroImage4-placehol
 
 export const ROUTES = {
   HOME: "/",
+  CONTACT: "/contact",
   STREET: "/street",
   STUDIO: "/studio",
   PORTRAIT: "/portrait"

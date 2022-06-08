@@ -8,8 +8,11 @@
   --transition-time: 0.4s;
   --border-radius: 5px;
   --header-height: 10vh;
-  --header-offstep: 12vh;
+  --header-offstep: 120px;
+  --header-offstep-small: 80px;
   --padding-sides: 50px;
+  --padding-section-small: 20px;
+  --padding-section-very-small: 10px;
   --margin-link: 20px;
 }
 
@@ -22,6 +25,7 @@
 }
 
 * {
+  cursor: default;
   font-family: "Play", sans-serif;
   padding: 0;
   margin: 0;
@@ -31,6 +35,19 @@
   transition-duration: var(--transition-time);
   -webkit-transition-duration: var(--transition-time); /* Safari */
   list-style: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav-header-links a {
@@ -69,6 +86,11 @@ html {
   align-items: center;
   z-index: 15;
   padding: 0 var(--padding-sides);
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   /* transition: transform 0.9s; */
 }
 
@@ -94,6 +116,7 @@ html {
 }
 
 .nav-categories-content-wrapper {
+  cursor: pointer;
   position: absolute;
   display: none;
   width: inherit;
@@ -119,15 +142,12 @@ html {
   padding: 10px 0;
 }
 
-.nav-categories:hover .nav-categories-content-wrapper {
+.nav-categories-content-active {
   display: block;
 }
 
-.nav-categories-content-active {
-  display: block;
-  /* display: flex;
-  flex-direction: column;
-  z-index: 20; */
+.nav-categories-opened {
+  margin-bottom: var(--margin-link);
 }
 
 .hero-image-wrapper {
@@ -167,6 +187,7 @@ html {
 }
 
 .carousel {
+  overflow-y: hidden;
   width: 100%;
   height: 100vh;
   background-color: rgb(0, 0, 0);
@@ -200,13 +221,24 @@ html {
 }
 
 .gallery-container {
-  padding: var(--header-offstep) 0;
   background-color: rgb(43, 43, 43);
+  padding: var(--header-offstep) var(--padding-sides);
+}
+
+.gallery-container h1 {
+  padding: 10px;
+  border-bottom: 1px solid var(--white);
 }
 
 .gallery-image {
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 5px 2px var(--grey-light);
 }
 
 .gallery-grid {
@@ -216,7 +248,63 @@ html {
   column-gap: 1em;
   row-gap: 1em;
   text-align: center;
-  margin: 2em;
+  margin: var(--padding-sides) 0;
+}
+
+.btn-media {
+  width: 1.7em;
+  height: 1.7em;
+}
+
+.link-media {
+  display: block;
+  width: inherit;
+  height: inherit;
+  transition-duration: 0s;
+}
+
+.icon-small {
+  width: 1.7em;
+  height: 1.7em;
+  display: block;
+  transition-duration: 0s;
+}
+
+.icon-contact {
+  margin-right: 10px;
+}
+
+.contact-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--padding-sides);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url("./images/contactImage.jpg");
+}
+
+.contact-content {
+  width: 100%;
+  margin: var(--padding-section-small) 0;
+  /* background-color: rgb(180, 180, 255); */
+}
+
+.contact-item {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding: var(--padding-section-small) 0;
+font-size: 20px;
+}
+
+.section {
+  padding: var(--header-offstep) var(--padding-sides);
 }
 
 /* Scrollbar*/
@@ -237,8 +325,16 @@ html {
 }
 
 @media (hover: hover) {
-  .nav-header-links a:hover, .nav-categories:hover {
+  .nav-header-links a:hover,
+  .nav-categories p:hover {
     color: var(--grey);
+  }
+  .nav-categories:hover .nav-categories-content-wrapper {
+    display: block;
+  }
+  .link-media:hover {
+    filter: invert(0%) sepia(0%) saturate(3207%)
+      brightness(100%) contrast(1%);
   }
 }
 
@@ -295,11 +391,18 @@ html {
   }
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr);
-    margin: 1em;
+    margin: 1em 0;
+  }
+  .gallery-container {
+    padding: var(--header-offstep-small) var(--padding-section-very-small);
   }
 
   .header-dark {
     background-color: var(--header-color-intense);
+  }
+  .contact-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+      url("./images/contactImage.jpg");
   }
 }
 
@@ -316,7 +419,6 @@ html {
   0% {
     filter: brightness(150%);
     opacity: 0.3;
-    
   }
   100% {
     filter: brightness(100%);

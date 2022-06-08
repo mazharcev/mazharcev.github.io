@@ -29,7 +29,7 @@ export default function GalleryImage(props) {
       loading="lazy"
       id={image.id}
       src={currentImg}
-      alt="gallery image"
+      alt={`gallery image ${image.id}`}
       className="gallery-image"
     />
   );
