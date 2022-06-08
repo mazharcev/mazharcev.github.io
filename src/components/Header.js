@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../App.css";
-import { ROUTES } from "../services/services";
+import { CATEGORIES, ROUTES } from "../services/services";
 
 export default function Header() {
   return (
@@ -10,8 +10,8 @@ export default function Header() {
       </NavLink>
 
       <ul className="nav-header-links">
-        <NavLink to={ROUTES.HOME} className="nav-link">
-          Портфолио
+        <NavLink to={ROUTES.PORTFOLIO} className="nav-link">
+          {CATEGORIES.PORTFOLIO}
         </NavLink>
         <div className="nav-categories">
           <p id="navCategoriesId">
@@ -23,13 +23,13 @@ export default function Header() {
           >
             <ul className="nav-categories-content">
               <NavLink to={ROUTES.STREET} className="nav-link">
-                Street
+                {CATEGORIES.STREET}
               </NavLink>
               <NavLink to={ROUTES.STUDIO} className="nav-link">
-                Studio
+                {CATEGORIES.STUDIO}
               </NavLink>
               <NavLink to={ROUTES.PORTRAIT} className="nav-link">
-                Portrait
+                {CATEGORIES.PORTRAIT}
               </NavLink>
             </ul>
           </div>

@@ -1,13 +1,16 @@
+import Divider from "../components/Divider";
 import GalleryImage from "../components/GalleryImage";
-import { studioImages } from "../services/services";
+import { CATEGORIES, studioImages } from "../services/services";
 
 export default function GalleryStudio() {
   return (
     <div className="gallery-container">
-      <h1>Studio</h1>
+      <div className="gallery-title-container">
+        <Divider title={CATEGORIES.STUDIO} />
+      </div>
       <div className="gallery-grid">
         {studioImages.map((image) => (
-          <GalleryImage key={image.id} image={image} />
+          <GalleryImage key={image.id} image={image} styles="gallery-image"/>
         ))}
       </div>
     </div>

@@ -11,35 +11,67 @@ import heroImg4Placeholder from "../images/hero/placeholders/heroImage4-placehol
 export const ROUTES = {
   HOME: "/",
   CONTACT: "/contact",
-  STREET: "/street",
-  STUDIO: "/studio",
-  PORTRAIT: "/portrait"
+  PORTFOLIO: "/portfolio",
+  STREET: "/portfolio/street",
+  STUDIO: "/portfolio/studio",
+  PORTRAIT: "/portfolio/portrait",
 };
+
+export const CATEGORIES = {
+  PORTFOLIO: "Портфолио",
+  STREET: "Street",
+  STUDIO: "Studio",
+  PORTRAIT: "Portrait",
+};
+
+export const categories = [
+  {
+    id: "categoryStreet",
+    title: CATEGORIES.STREET,
+    original: "/images/categoriesTitle/streetImageTitle.jpg",
+    placeholder: "/images/categoriesTitle/placeholders/streetImageTitle-placeholder.jpg",
+    url: ROUTES.STREET,
+  },
+  {
+    id: "categoryStudio",
+    title: CATEGORIES.STUDIO,
+    original: "/images/categoriesTitle/studioImageTitle.jpg",
+    placeholder: "/images/categoriesTitle/placeholders/studioImageTitle-placeholder.jpg",
+    url: ROUTES.STUDIO,
+  },
+  {
+    id: "categoryPortrait",
+    title: CATEGORIES.PORTRAIT,
+    original: "/images/categoriesTitle/portraitImageTitle.jpg",
+    placeholder: "/images/categoriesTitle/placeholders/portraitImageTitle-placeholder.jpg",
+    url: ROUTES.PORTRAIT,
+  },
+];
 
 export const carouselImages = [
   {
     id: "hero1",
     original: heroImg1,
     placeholder: heroImg1Placeholder,
-    position: "50% 50%"
+    position: "50% 50%",
   },
   {
     id: "hero2",
     original: heroImg2,
     placeholder: heroImg2Placeholder,
-    position: "50% 50%"
+    position: "50% 50%",
   },
   {
     id: "hero3",
     original: heroImg3,
     placeholder: heroImg3Placeholder,
-    position: "50% 30%"
+    position: "50% 30%",
   },
   {
     id: "hero4",
     original: heroImg4,
     placeholder: heroImg4Placeholder,
-    position: "50% 30%"
+    position: "50% 30%",
   },
 ];
 

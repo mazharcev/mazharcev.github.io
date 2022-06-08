@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function GalleryImage(props) {
-  const { image } = props;
+  const { image, styles } = props;
   const [currentImg, setCurrentImg] = useState(image.placeholder);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,8 +29,8 @@ export default function GalleryImage(props) {
       loading="lazy"
       id={image.id}
       src={currentImg}
-      alt={`gallery image ${image.id}`}
-      className="gallery-image"
+      alt={`image ${image.id}`}
+      className={styles}
     />
   );
 }

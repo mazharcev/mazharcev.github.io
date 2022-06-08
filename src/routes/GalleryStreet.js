@@ -1,13 +1,16 @@
+import Divider from "../components/Divider";
 import GalleryImage from "../components/GalleryImage";
-import { streetImages } from "../services/services";
+import { CATEGORIES, streetImages } from "../services/services";
 
 export default function GalleryStreet() {
   return (
     <div className="gallery-container">
-      <h1>Street</h1>
+      <div className="gallery-title-container">
+        <Divider title={CATEGORIES.STREET} />
+      </div>
       <div className="gallery-grid">
         {streetImages.map((image) => (
-          <GalleryImage key={image.id} image={image} />
+          <GalleryImage key={image.id} image={image} styles="gallery-image"/>
         ))}
       </div>
     </div>
