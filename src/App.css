@@ -51,6 +51,7 @@ img {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  transition-duration: var(--transition-time);
 }
 
 .nav-header-links a {
@@ -153,7 +154,7 @@ html {
   width: inherit;
   top: 0;
   z-index: 100;
-  padding: var(--header-height) 0;
+  padding-top: var(--header-height);
 }
 
 .nav-categories-content {
@@ -346,7 +347,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.65)),
     url("./images/contactImageTitle.jpg");
 }
 
@@ -443,6 +444,9 @@ html {
   .category-card:hover {
     transform: scale(1.03);
   }
+    .icon-contact:hover {
+    filter: invert(0%) sepia(0%) saturate(3207%) brightness(100%) contrast(1%);
+  }
   .contact-item:hover * {
     color: var(--grey-light);
     filter: invert(0%) sepia(0%) saturate(3207%) brightness(100%) contrast(1%);
@@ -538,7 +542,7 @@ html {
     background-color: var(--header-color-intense);
   }
   .contact-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url("./images/contactImageTitle.jpg");
   }
   .contact-item {
