@@ -4,11 +4,14 @@ import emailImg from "../images/media/email.png";
 import vkImg from "../images/media/vk.png";
 import { INFO } from "../services/.info";
 import { TITLES } from "../services/services";
+import Divider from "../components/Divider";
 
 export default function Contact() {
   return (
     <div className="contact-container section">
-      <h1>{TITLES.CONTACT_ME}</h1>
+            <div className="gallery-title-container">
+        <Divider title={TITLES.CONTACT_ME} />
+      </div>
 
       <div className="contact-content">
         <div className="contact-item">

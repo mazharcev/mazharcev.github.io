@@ -5,19 +5,34 @@ import RoutesComponent from "./routes/RoutesComponent";
 
 export default function App() {
   const [isHeaderMinimized, setIsHeaderMinimized] = useState(false);
-  useEffect(() => {
-    function navEvents() {
-      const header = document.getElementById("headerId");
-      const homeBtn = document.getElementById("homeDiv");
-      const hamburger = document.querySelector(".header-hamburger");
-      const nav = document.querySelector(".nav-header-links");
-      const navLinks = document.querySelectorAll(".nav-link");
-      const categoriesNav = document.getElementById("navCategoriesId");
-      const categoriesContent = document.getElementById(
-        "navCategoriesContentId"
-      );
 
-      if(!matchMedia("(pointer:fine)").matches || "ontouchstart" in window) {
+  useEffect(() => {
+    const header = document.getElementById("headerId");
+    const homeBtn = document.getElementById("homeDiv");
+    const hamburger = document.querySelector(".header-hamburger");
+    const nav = document.querySelector(".nav-header-links");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const categoriesNav = document.getElementById("navCategoriesId");
+    const categoriesContent = document.getElementById("navCategoriesContentId");
+
+    function closeNav() {
+      nav.classList.remove("nav-header-links-active");
+      nav.classList.remove("header-dark");
+      hamburger.classList.remove("ham-toggle");
+      header.classList.remove("header-dark");
+      categoriesContent.classList.remove("nav-categories-content-active");
+      categoriesNav.classList.remove("nav-categories-opened");
+    }
+
+    function openNav() {
+      nav.classList.toggle("nav-header-links-active");
+      nav.classList.toggle("header-dark");
+      hamburger.classList.toggle("ham-toggle");
+      header.classList.toggle("header-dark");
+    }
+
+    function navEvents() {
+      if (!matchMedia("(pointer:fine)").matches || "ontouchstart" in window) {
         categoriesNav.addEventListener(
           "click",
           () => {
@@ -31,10 +46,15 @@ export default function App() {
       hamburger.addEventListener(
         "click",
         () => {
-          nav.classList.toggle("nav-header-links-active");
-          nav.classList.toggle("header-dark");
-          hamburger.classList.toggle("ham-toggle");
-          header.classList.toggle("header-dark");
+          openNav();
+        },
+        false
+      );
+
+      homeBtn.addEventListener(
+        "click",
+        () => {
+          closeNav();
         },
         false
       );
@@ -43,59 +63,32 @@ export default function App() {
         navLinks[i].addEventListener(
           "click",
           () => {
-            nav.classList.remove("nav-header-links-active");
-            nav.classList.remove("header-dark");
-            hamburger.classList.remove("ham-toggle");
-            header.classList.remove("header-dark");
-            categoriesContent.classList.remove("nav-categories-content-active");
-            categoriesNav.classList.remove("nav-categories-opened");
+            closeNav();
           },
           false
         );
       }
-
-      homeBtn.addEventListener(
-        "click",
-        () => {
-          nav.classList.remove("nav-header-links-active");
-          nav.classList.remove("header-dark");
-          hamburger.classList.remove("ham-toggle");
-          header.classList.remove("header-dark");
-          categoriesContent.classList.remove("nav-categories-content-active");
-          categoriesNav.classList.remove("nav-categories-opened");
-        },
-        false
-      );
     }
 
-    function handleHeaderMinimized() {
-      //let documentBottom = document.body.scrollHeight;
+    function minimizeHeaderOnScroll() {
       let scrolledDistance = document.documentElement.scrollTop;
-      if (scrolledDistance >= 100) {
+
+      if (scrolledDistance >= 200) {
         setIsHeaderMinimized(true);
-      } else if (scrolledDistance <= 100) {
+        closeNav();
+      } else if (scrolledDistance <= 200) {
         setIsHeaderMinimized(false);
       }
     }
-    window.addEventListener("scroll", handleHeaderMinimized);
-    // function handleButtonScrollToTop() {
-    //   let documentBottom = document.body.scrollHeight;
-    //   let scrolledDistance = document.documentElement.scrollTop;
-    //   if (scrolledDistance > documentBottom / 3) {
-    //     setIsButtonScrollToTopVisible(true);
-    //   } else if (scrolledDistance <= documentBottom / 3) {
-    //     setIsButtonScrollToTopVisible(false);
-    //   }
-    // }
 
-    //window.addEventListener("scroll", handleButtonScrollToTop);
+    window.addEventListener("scroll", minimizeHeaderOnScroll);
     navEvents();
   }, []);
 
   return (
     <div>
-      <Header isHeaderMinimized={isHeaderMinimized}/>
-        <RoutesComponent />
+      <Header isHeaderMinimized={isHeaderMinimized} />
+      <RoutesComponent />
     </div>
   );
 }
