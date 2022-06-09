@@ -1,19 +1,23 @@
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
+  --bone: rgb(255, 255, 255, 0.2);
   --grey: rgb(96, 96, 96);
   --grey-light: rgb(131, 131, 131);
   --header-color: rgba(0, 0, 0, 0.3);
   --header-color-intense: rgba(0, 0, 0, 0.7);
   --transition-time: 0.4s;
   --border-radius: 5px;
+  --header-minimized-height: 5vh;
   --header-height: 10vh;
+  --header-height-y-offset: -10vh;
   --header-offstep: 120px;
   --header-offstep-small: 80px;
   --padding-sides: 50px;
+  --padding-sides-gallery: 80px;
   --padding-section-small: 20px;
   --padding-section-very-small: 10px;
-  --margin-link: 20px;
+  --margin-link: 30px;
 }
 
 /* Text selectin color*/
@@ -25,7 +29,6 @@
 }
 
 * {
-  font-family: "Play", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -47,10 +50,15 @@ img {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
 }
 
 .nav-header-links a {
   margin-left: var(--margin-link);
+}
+
+h1 {
+  font-weight: normal;
 }
 
 h1,
@@ -78,16 +86,20 @@ button {
 
 body,
 html {
-  background-color: rgba(0, 0, 0);
+  font-family: "Playfair Display SC", serif;
+  background-color: black;
   overflow-x: hidden;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: black;
 }
 
 .header {
+  /* position: absolute; */
+  font-size: 20px;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: var(--header-height);
   background-color: var(--header-color);
-  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -100,6 +112,17 @@ html {
   -webkit-user-select: none;
   user-select: none;
   /* transition: transform 0.9s; */
+}
+.header-minimized {
+  top: var(--header-height-y-offset);
+}
+.footer {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--bone);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-div {
@@ -129,7 +152,8 @@ html {
   display: none;
   width: inherit;
   top: 0;
-  padding: 10vh 0;
+  z-index: 100;
+  padding: var(--header-height) 0;
 }
 
 .nav-categories-content {
@@ -195,10 +219,13 @@ html {
 }
 
 .carousel {
+  top: 0;
+  left: 0;
+  position: absolute;
+
   overflow-y: hidden;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 0);
 }
 
 .carousel-item {
@@ -228,21 +255,8 @@ html {
   margin: 0 50px;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  column-gap: 1em;
-  row-gap: 1em;
-  text-align: center;
-  margin: var(--padding-sides) 0;
-}
-
 .category-card {
   position: relative;
-}
-.category-card:hover {
-  transform: scale(1.03);
 }
 .category-image {
   width: 100%;
@@ -251,22 +265,36 @@ html {
 }
 .category-card-title {
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   user-select: none;
-  font-size: 50px;
-  text-shadow: 1px 1px 15px black;
+  font-size: 18px;
+  letter-spacing: 10px;
+  background-color: var(--white);
+  padding: var(--padding-section-small);
+  /* text-shadow: 1px 1px 15px black; */
+}
+.category-card-title h1 {
+  color: var(--black);
 }
 
 .gallery-container {
   background-color: rgb(43, 43, 43);
-  padding: var(--header-offstep) var(--padding-sides);
+  padding: var(--header-offstep) var(--padding-sides) var(--padding-section-small) var(--padding-sides);
+  
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9)),
+    url("./images/galleryBg.jpg");
 }
 
 .gallery-image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -278,6 +306,9 @@ html {
   row-gap: 1em;
   text-align: center;
   margin: var(--padding-sides) 0;
+}
+.portfolio-grid {
+  margin: var(--padding-sides-gallery) 0;
 }
 
 .btn-media {
@@ -295,8 +326,10 @@ html {
 .icon-small {
   width: 1.7em;
   height: 1.7em;
-  display: block;
+  /* display: block; */
   transition-duration: 0s;
+  display: inline-block;
+  vertical-align: middle; 
 }
 
 .icon-contact {
@@ -305,11 +338,7 @@ html {
 
 .contact-container {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: var(--padding-sides);
+  width: 100%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -320,12 +349,14 @@ html {
 
 .contact-content {
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
   margin: var(--padding-section-small) 0;
-  /* background-color: rgb(180, 180, 255); */
 }
 
 .contact-item {
+  width: fit-content;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: var(--padding-section-small) 0;
@@ -386,7 +417,11 @@ html {
   .nav-categories:hover .nav-categories-content-wrapper {
     display: block;
   }
-  .link-media:hover {
+  .category-card:hover {
+    transform: scale(1.03);
+  }
+  .contact-item:hover *{
+    color: var(--grey-light);
     filter: invert(0%) sepia(0%) saturate(3207%) brightness(100%) contrast(1%);
   }
 }
@@ -396,6 +431,7 @@ html {
     background-position: top;
   }
   .header-hamburger {
+    font-size: 1em;
     display: block;
   }
   .nav-categories-content-wrapper {
@@ -437,17 +473,26 @@ html {
   .nav-header-links a,
   .nav-header-links button,
   .nav-categories {
-    margin: 0.6em 0;
+    margin: 1.2em 0;
   }
   .home-div {
-    font-size: 18px;
+    font-size: 20px;
+  }
+  .divider h1 {
+    font-size: 22px;
   }
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr);
     margin: 1em 0;
   }
+  .portfolio-grid {
+    row-gap: 5em;
+    margin-top: 65px;
+  }
   .gallery-container {
     padding: var(--header-offstep-small) var(--padding-section-very-small);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
+    url("./images/galleryBg.jpg");
   }
 
   .header-dark {
@@ -457,6 +502,12 @@ html {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
       url("./images/contactImageTitle.jpg");
   }
+  .contact-item {
+    font-size: 18px;
+  }
+  .section {
+    padding: var(--header-offstep-small) var(--padding-section-small);
+  }  
 }
 
 /* Hamburger */

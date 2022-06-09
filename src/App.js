@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import RoutesComponent from "./routes/RoutesComponent";
 
 export default function App() {
+  const [isHeaderMinimized, setIsHeaderMinimized] = useState(false);
   useEffect(() => {
     function navEvents() {
       const header = document.getElementById("headerId");
@@ -67,6 +68,16 @@ export default function App() {
       );
     }
 
+    function handleHeaderMinimized() {
+      //let documentBottom = document.body.scrollHeight;
+      let scrolledDistance = document.documentElement.scrollTop;
+      if (scrolledDistance >= 100) {
+        setIsHeaderMinimized(true);
+      } else if (scrolledDistance <= 100) {
+        setIsHeaderMinimized(false);
+      }
+    }
+    window.addEventListener("scroll", handleHeaderMinimized);
     // function handleButtonScrollToTop() {
     //   let documentBottom = document.body.scrollHeight;
     //   let scrolledDistance = document.documentElement.scrollTop;
@@ -83,10 +94,8 @@ export default function App() {
 
   return (
     <div>
-      <Header />
-      <div className="content">
+      <Header isHeaderMinimized={isHeaderMinimized}/>
         <RoutesComponent />
-      </div>
     </div>
   );
 }

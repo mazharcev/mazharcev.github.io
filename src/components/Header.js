@@ -1,21 +1,22 @@
 import { NavLink } from "react-router-dom";
 import "../App.css";
-import { CATEGORIES, ROUTES } from "../services/services";
+import { TITLES, ROUTES } from "../services/services";
 
-export default function Header() {
+export default function Header(props) {
+  const {isHeaderMinimized} = props;
   return (
-    <div id="headerId" className="header">
+    <div id="headerId" className={`header ${isHeaderMinimized ? "header-minimized" : ""}`}>
       <NavLink to={ROUTES.HOME} id="homeDiv" className="home-div">
-        Alexey Mazharcev
+        {TITLES.NAME}
       </NavLink>
 
       <ul className="nav-header-links">
         <NavLink to={ROUTES.PORTFOLIO} className="nav-link">
-          {CATEGORIES.PORTFOLIO}
+          {TITLES.PORTFOLIO}
         </NavLink>
         <div className="nav-categories">
           <p id="navCategoriesId">
-            Категории <span>▼</span>
+            {TITLES.CATEGORIES} <span>▼</span>
           </p>
           <div
             id="navCategoriesContentId"
@@ -23,19 +24,19 @@ export default function Header() {
           >
             <ul className="nav-categories-content">
               <NavLink to={ROUTES.STREET} className="nav-link">
-                {CATEGORIES.STREET}
+                {TITLES.STREET}
               </NavLink>
               <NavLink to={ROUTES.STUDIO} className="nav-link">
-                {CATEGORIES.STUDIO}
+                {TITLES.STUDIO}
               </NavLink>
               <NavLink to={ROUTES.PORTRAIT} className="nav-link">
-                {CATEGORIES.PORTRAIT}
+                {TITLES.PORTRAIT}
               </NavLink>
             </ul>
           </div>
         </div>
         <NavLink to={ROUTES.CONTACT} className="nav-link">
-          Контакты
+          {TITLES.CONTACT}
         </NavLink>
       </ul>
 

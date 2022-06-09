@@ -17,31 +17,42 @@ export const ROUTES = {
   PORTRAIT: "/portfolio/portrait",
 };
 
-export const CATEGORIES = {
-  PORTFOLIO: "Портфолио",
-  STREET: "Street",
-  STUDIO: "Studio",
-  PORTRAIT: "Portrait",
+// export const TITLES = {
+//   PORTFOLIO: "Портфолио",
+//   STREET: "Street",
+//   STUDIO: "Studio",
+//   PORTRAIT: "Portrait",
+// };
+
+export const TITLES = {
+  NAME: "ALEXEY MAZHARCEV",
+  CATEGORIES: "КАТЕГОРИИ",
+  CONTACT: "КОНТАКТЫ",
+  PORTFOLIO: "ПОРТФОЛИО",
+  STREET: "STREET",
+  STUDIO: "STUDIO",
+  PORTRAIT: "PORTRAIT",
+  CONTACT_ME: "СВЯЗЬ СО МНОЙ",
 };
 
 export const categories = [
   {
     id: "categoryStreet",
-    title: CATEGORIES.STREET,
+    title: TITLES.STREET,
     original: "/images/categoriesTitle/streetImageTitle.jpg",
     placeholder: "/images/categoriesTitle/placeholders/streetImageTitle-placeholder.jpg",
     url: ROUTES.STREET,
   },
   {
     id: "categoryStudio",
-    title: CATEGORIES.STUDIO,
+    title: TITLES.STUDIO,
     original: "/images/categoriesTitle/studioImageTitle.jpg",
     placeholder: "/images/categoriesTitle/placeholders/studioImageTitle-placeholder.jpg",
     url: ROUTES.STUDIO,
   },
   {
     id: "categoryPortrait",
-    title: CATEGORIES.PORTRAIT,
+    title: TITLES.PORTRAIT,
     original: "/images/categoriesTitle/portraitImageTitle.jpg",
     placeholder: "/images/categoriesTitle/placeholders/portraitImageTitle-placeholder.jpg",
     url: ROUTES.PORTRAIT,
