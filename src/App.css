@@ -463,6 +463,7 @@ html {
 @media screen and (max-width: 768px) {
   .header {
     padding: 0 var(--padding-section-small);
+    font-size: 20px;
   }
   .hero-image {
     background-position: top;
