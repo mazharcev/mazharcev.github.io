@@ -478,7 +478,7 @@ html {
   .home-div {
     font-size: 20px;
   }
-  .divider h1 {
+  .divider h1, .contact-container h1 {
     font-size: 22px;
   }
   .gallery-grid {
