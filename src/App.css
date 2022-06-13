@@ -122,8 +122,14 @@ html {
   height: var(--header-height);
   background-color: var(--bone);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 var(--padding-sides)
+}
+.footer-media{
+}
+.blank-item {
+
 }
 
 .home-div {
@@ -263,9 +269,9 @@ html {
   position: relative;
 }
 .category-image {
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  height: 600px;
 }
 .category-card-title {
   position: absolute;
@@ -458,9 +464,22 @@ html {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .category-card-title {
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .header {
     font-size: 15px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio-grid {
+    row-gap: 5em;
+    margin-top: 65px;
   }
 }
 
@@ -529,7 +548,6 @@ html {
     margin: 1em 0;
   }
   .portfolio-grid {
-    row-gap: 5em;
     margin-top: 65px;
   }
   .gallery-container {
@@ -551,6 +569,15 @@ html {
   .section {
     padding: var(--header-offstep-small) var(--padding-section-small);
   }
+}
+
+@media screen and (max-width: 320px) {
+.home-div {
+  font-size: 19px;
+}
+.header-hamburger {
+  font-size: 18px;
+}
 }
 
 /* Hamburger */

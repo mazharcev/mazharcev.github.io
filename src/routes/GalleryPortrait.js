@@ -1,7 +1,8 @@
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
-import { TITLES, portraitImages } from "../services/services";
+import { portraitImages } from "../services/portrait";
+import { TITLES } from "../services/services";
 
 export default function GalleryPortrait() {
   return (

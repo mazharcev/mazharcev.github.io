@@ -5,6 +5,7 @@ import telegramImg from "../images/media/telegram.png";
 import emailImg from "../images/media/email.png";
 import vkImg from "../images/media/vk.png";
 import { useEffect, useState } from "react";
+import { TITLES } from "../services/services";
 
 export default function Footer() {
   const [isButtonScrollToTopVisible, setIsButtonScrollToTopVisible] =
@@ -30,53 +31,59 @@ export default function Footer() {
     }
 
     window.addEventListener("scroll", showBtnToTopOnScroll);
-  }, [])
+  }, []);
 
   return (
     <div className="footer">
-      <button
-        className="btn-totop"
-        onClick={handleScrollToTop}
-        style={{ display: isButtonScrollToTopVisible ? "block" : "none" }}
-      >
-        <img
-          src={arrowUpImg}
-          alt="arrow button"
-          className="btn-totop-icon"
-        ></img>
-      </button>
+      <p id="blank-item" style={{ color: "transparent" }}>
+        {TITLES.TERMS}
+      </p>
+      <div className="footer-media">
+        <button
+          className="btn-totop"
+          onClick={handleScrollToTop}
+          style={{ display: isButtonScrollToTopVisible ? "block" : "none" }}
+        >
+          <img
+            src={arrowUpImg}
+            alt="arrow button"
+            className="btn-totop-icon"
+          ></img>
+        </button>
 
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={INFO.VK_LINK}
-        style={{ textDecoration: "underline" }}
-      >
-        <img src={vkImg} className="icon-small icon-contact" alt="vk icon" />
-      </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={INFO.VK_LINK}
+          style={{ textDecoration: "underline" }}
+        >
+          <img src={vkImg} className="icon-small icon-contact" alt="vk icon" />
+        </a>
 
-      <a href={INFO.PHONE_LINK}>
-        <img
-          src={whatsappImg}
-          className="icon-small icon-contact"
-          alt="whatsapp icon"
-        />
-      </a>
-      <a href={INFO.PHONE_LINK}>
-        <img
-          src={telegramImg}
-          className="icon-small icon-contact"
-          alt="telegram icon"
-        />
-      </a>
+        <a href={INFO.PHONE_LINK}>
+          <img
+            src={whatsappImg}
+            className="icon-small icon-contact"
+            alt="whatsapp icon"
+          />
+        </a>
+        <a href={INFO.PHONE_LINK}>
+          <img
+            src={telegramImg}
+            className="icon-small icon-contact"
+            alt="telegram icon"
+          />
+        </a>
 
-      <a href={INFO.EMAIL_LINK}>
-        <img
-          src={emailImg}
-          className="icon-small icon-contact"
-          alt="email icon"
-        />
-      </a>
+        <a href={INFO.EMAIL_LINK}>
+          <img
+            src={emailImg}
+            className="icon-small icon-contact"
+            alt="email icon"
+          />
+        </a>
+      </div>
+      <p>{TITLES.TERMS}</p>
     </div>
   );
 }

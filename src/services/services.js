@@ -33,6 +33,7 @@ export const TITLES = {
   STUDIO: "STUDIO",
   PORTRAIT: "PORTRAIT",
   CONTACT_ME: "СВЯЗЬ СО МНОЙ",
+  TERMS: "ALEXEY MAZHARCEV, ВСЕ ПРАВА ЗАЩИЩЕНЫ"
 };
 
 export const categories = [
@@ -111,33 +112,5 @@ export const studioImages = [
     id: "studio5",
     original: "/images/studio/studio1.jpg",
     placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
-  },
-];
-
-export const portraitImages = [
-  {
-    id: "portrait1",
-    original: "/images/portrait/portrait1.jpg",
-    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
-  },
-  {
-    id: "portrait2",
-    original: "/images/portrait/portrait1.jpg",
-    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
-  },
-  {
-    id: "portrait3",
-    original: "/images/portrait/portrait1.jpg",
-    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
-  },
-  {
-    id: "portrait4",
-    original: "/images/portrait/portrait1.jpg",
-    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
-  },
-  {
-    id: "portrait5",
-    original: "/images/portrait/portrait1.jpg",
-    placeholder: "/images/portrait/placeholders/portrait1-placeholder.jpg",
   },
 ];
