@@ -35,7 +35,7 @@ export default function Footer() {
 
   return (
     <div className="footer">
-      <p id="blank-item" style={{ color: "transparent" }}>
+      <p className="blank-item">
         {TITLES.TERMS}
       </p>
       <div className="footer-media">
@@ -83,7 +83,7 @@ export default function Footer() {
           />
         </a>
       </div>
-      <p>{TITLES.TERMS}</p>
+      <p className="footer-title">{TITLES.TERMS}</p>
     </div>
   );
 }

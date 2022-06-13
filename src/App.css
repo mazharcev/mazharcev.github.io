@@ -124,14 +124,11 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--padding-sides)
-}
-.footer-media{
+  padding: 0 var(--padding-sides);
 }
 .blank-item {
-
+  color: transparent;
 }
-
 .home-div {
   font-size: 25px;
 }
@@ -450,7 +447,7 @@ html {
   .category-card:hover {
     transform: scale(1.03);
   }
-    .icon-contact:hover {
+  .icon-contact:hover {
     filter: invert(0%) sepia(0%) saturate(3207%) brightness(100%) contrast(1%);
   }
   .contact-item:hover * {
@@ -465,6 +462,14 @@ html {
 }
 
 @media screen and (max-width: 1024px) {
+  .footer {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+  }
+  .blank-item {
+    display: none;
+  }
   .category-card-title {
     font-size: 14px;
   }
@@ -484,6 +489,9 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .footer-title {
+    font-size: 12px;
+  }
   .header {
     padding: 0 var(--padding-section-small);
     font-size: 20px;
@@ -572,12 +580,15 @@ html {
 }
 
 @media screen and (max-width: 320px) {
-.home-div {
-  font-size: 19px;
-}
-.header-hamburger {
-  font-size: 18px;
-}
+  .footer-title {
+    font-size: 10px;
+  }
+  .home-div {
+    font-size: 19px;
+  }
+  .header-hamburger {
+    font-size: 18px;
+  }
 }
 
 /* Hamburger */
