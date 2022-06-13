@@ -19,12 +19,12 @@ export default function Footer() {
 
   useEffect(() => {
     function showBtnToTopOnScroll() {
-      let documentBottom = document.body.scrollHeight;
+      //let documentBottom = document.body.scrollHeight;
       let scrolledDistance = document.documentElement.scrollTop;
 
-      if (scrolledDistance > documentBottom / 3) {
+      if (scrolledDistance > 1400) {
         setIsButtonScrollToTopVisible(true);
-      } else if (scrolledDistance <= documentBottom / 3) {
+      } else if (scrolledDistance <= 1400) {
         setIsButtonScrollToTopVisible(false);
       }
     }

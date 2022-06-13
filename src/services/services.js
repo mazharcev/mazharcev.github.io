@@ -86,34 +86,6 @@ export const carouselImages = [
   },
 ];
 
-export const streetImages = [
-  {
-    id: "street1",
-    original: "/images/street/street1.jpg",
-    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
-  },
-  {
-    id: "street2",
-    original: "/images/street/street1.jpg",
-    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
-  },
-  {
-    id: "street3",
-    original: "/images/street/street1.jpg",
-    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
-  },
-  {
-    id: "street4",
-    original: "/images/street/street1.jpg",
-    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
-  },
-  {
-    id: "street5",
-    original: "/images/street/street1.jpg",
-    placeholder: "/images/street/placeholders/street1-placeholder.jpg",
-  },
-];
-
 export const studioImages = [
   {
     id: "studio1",

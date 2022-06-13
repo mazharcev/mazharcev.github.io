@@ -26,7 +26,6 @@ export default function HeroImage(props) {
 
   return (
     <img
-      loading="lazy"
       id={image.id}
       src={currentImg}
       alt="hero image"

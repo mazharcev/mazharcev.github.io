@@ -1,7 +1,8 @@
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
-import { TITLES, streetImages } from "../services/services";
+import { TITLES } from "../services/services";
+import { streetImages } from "../services/street";
 
 export default function GalleryStreet() {
   return (
