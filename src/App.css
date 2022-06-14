@@ -352,10 +352,10 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.45)),
-  url("./images/contactImageTitle.jpg"); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+    url("./images/contactImageTitle.jpg"); */
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
     url("./images/contactImageTitle.jpg");
 }
 
@@ -572,10 +572,6 @@ html {
   .header-dark {
     background-color: var(--header-color-intense);
   }
-  /* .contact-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("./images/contactImageTitle.jpg");
-  } */
   .contact-item {
     font-size: 18px;
   }
