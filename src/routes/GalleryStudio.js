@@ -1,7 +1,8 @@
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
-import { TITLES, studioImages } from "../services/services";
+import { TITLES } from "../services/services";
+import { studioImages } from "../services/studio";
 
 export default function GalleryStudio() {
   return (

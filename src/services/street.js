@@ -59,4 +59,44 @@ export const streetImages = [
     original: "/images/street/street12.jpg",
     placeholder: "/images/street/placeholders/street-placeholder.jpg",
   },
+  {
+    id: "street13",
+    original: "/images/street/street13.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street14",
+    original: "/images/street/street14.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street15",
+    original: "/images/street/street15.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street16",
+    original: "/images/street/street16.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street17",
+    original: "/images/street/street17.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street18",
+    original: "/images/street/street18.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street19",
+    original: "/images/street/street19.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
+  {
+    id: "street20",
+    original: "/images/street/street20.jpg",
+    placeholder: "/images/street/placeholders/street-placeholder.jpg",
+  },
 ];

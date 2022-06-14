@@ -1,7 +1,7 @@
 import CategoryCard from "../components/CategoryCard";
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
-import { TITLES, categories } from "../services/services";
+import { TITLES, CATEGORIES } from "../services/services";
 
 export default function Portfolio() {
   return (
@@ -11,7 +11,7 @@ export default function Portfolio() {
         <Divider title={TITLES.PORTFOLIO} />
       </div>
       <div className="gallery-grid portfolio-grid">
-        {categories.map((category) => (
+        {CATEGORIES.map((category) => (
           <CategoryCard
             key={category.id}
             category={category}

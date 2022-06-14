@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "../App.css";
-import { TITLES, ROUTES } from "../services/services";
+import { TITLES, ROUTES, CATEGORIES } from "../services/services";
 
 export default function Header(props) {
-  const {isHeaderMinimized} = props;
+  const { isHeaderMinimized } = props;
   return (
-    <div id="headerId" className={`header ${isHeaderMinimized ? "header-minimized" : ""}`}>
+    <div
+      id="headerId"
+      className={`header ${isHeaderMinimized ? "header-minimized" : ""}`}
+    >
       <NavLink to={ROUTES.HOME} id="homeDiv" className="home-div">
         {TITLES.NAME}
       </NavLink>
@@ -23,15 +26,11 @@ export default function Header(props) {
             className="nav-categories-content-wrapper"
           >
             <ul className="nav-categories-content">
-              <NavLink to={ROUTES.STREET} className="nav-link">
-                {TITLES.STREET}
-              </NavLink>
-              <NavLink to={ROUTES.STUDIO} className="nav-link">
-                {TITLES.STUDIO}
-              </NavLink>
-              <NavLink to={ROUTES.PORTRAIT} className="nav-link">
-                {TITLES.PORTRAIT}
-              </NavLink>
+              {CATEGORIES.map((category) => (
+                 <NavLink key={category.id} to={category.url} className="nav-link">
+                 {category.title}
+               </NavLink>
+              ))}
             </ul>
           </div>
         </div>

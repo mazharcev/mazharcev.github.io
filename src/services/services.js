@@ -14,15 +14,7 @@ export const ROUTES = {
   PORTFOLIO: "/portfolio",
   STREET: "/portfolio/street",
   STUDIO: "/portfolio/studio",
-  PORTRAIT: "/portfolio/portrait",
 };
-
-// export const TITLES = {
-//   PORTFOLIO: "Портфолио",
-//   STREET: "Street",
-//   STUDIO: "Studio",
-//   PORTRAIT: "Portrait",
-// };
 
 export const TITLES = {
   NAME: "ALEXEY MAZHARCEV",
@@ -31,12 +23,11 @@ export const TITLES = {
   PORTFOLIO: "ПОРТФОЛИО",
   STREET: "STREET",
   STUDIO: "STUDIO",
-  PORTRAIT: "PORTRAIT",
   CONTACT_ME: "СВЯЗЬ СО МНОЙ",
   TERMS: "ALEXEY MAZHARCEV, ВСЕ ПРАВА ЗАЩИЩЕНЫ"
 };
 
-export const categories = [
+export const CATEGORIES = [
   {
     id: "categoryStreet",
     title: TITLES.STREET,
@@ -50,13 +41,6 @@ export const categories = [
     original: "/images/categoriesTitle/studioImageTitle.jpg",
     placeholder: "/images/categoriesTitle/placeholders/studioImageTitle-placeholder.jpg",
     url: ROUTES.STUDIO,
-  },
-  {
-    id: "categoryPortrait",
-    title: TITLES.PORTRAIT,
-    original: "/images/categoriesTitle/portraitImageTitle.jpg",
-    placeholder: "/images/categoriesTitle/placeholders/portraitImageTitle-placeholder.jpg",
-    url: ROUTES.PORTRAIT,
   },
 ];
 
@@ -84,33 +68,5 @@ export const carouselImages = [
     original: heroImg4,
     placeholder: heroImg4Placeholder,
     position: "50% 30%",
-  },
-];
-
-export const studioImages = [
-  {
-    id: "studio1",
-    original: "/images/studio/studio1.jpg",
-    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
-  },
-  {
-    id: "studio2",
-    original: "/images/studio/studio1.jpg",
-    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
-  },
-  {
-    id: "studio3",
-    original: "/images/studio/studio1.jpg",
-    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
-  },
-  {
-    id: "studio4",
-    original: "/images/studio/studio1.jpg",
-    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
-  },
-  {
-    id: "studio5",
-    original: "/images/studio/studio1.jpg",
-    placeholder: "/images/studio/placeholders/studio1-placeholder.jpg",
   },
 ];
