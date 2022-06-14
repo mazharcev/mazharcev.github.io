@@ -355,7 +355,13 @@ html {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
     url("./images/contactImageTitle.jpg"); */
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+    url("./images/contactImageTitle.jpg");
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+    url("./images/contactImageTitle.jpg");
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+    url("./images/contactImageTitle.jpg");
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
     url("./images/contactImageTitle.jpg");
 }
 
